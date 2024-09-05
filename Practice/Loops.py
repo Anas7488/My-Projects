@@ -10,5 +10,5 @@ a = [1,1,2,3,4,5,6]
 element(a)
 '''
 
-strs = r"Hello\nnanas"
+strs = r"Hello\nanas"
 print(strs)
