@@ -1,0 +1,13 @@
+{
+    "hello": "Hello! How can I help you today?",
+    "hi": "Hi there! What would you like to know about NeoTech?",
+    "programs": "We offer BCA, MCA, B.Tech, BBA, MBA, and B.Com programs.",
+    "admission": "Admissions are currently open. Visit our website or contact us for details.",
+    "location": "We are located at knowledge park2, Noida.",
+    "contact": "You can call us at (+91) 123-4545-11 or email info@neotech.edu.",
+    "bye": "Goodbye! Have a great day!",
+    "default": "I'm here to help with questions about NeoTech Institute. Please ask something related to admissions, programs, or facilities.",
+    "how are you": "I'm good thanks for asking! How can I assist you today?",
+    "thank you": "You're welcome! If you have any more questions, feel free to ask."
+  }
+  

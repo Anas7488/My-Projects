@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NeoTech Institute - Excellence in Education</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+<body>
+
+    <div class="chat-widget">
+        <div class="chat-button" id="chat-button">
+            <div class="chat-icon">💬</div>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h3>NeoTech Support</h3>
+                <button class="close-btn" id="close-chat">×</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    Hello! I'm NeoTech's virtual assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message here...">
+                <button id="send-button">
+                    <div class="send-icon">➤</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeRegistrationModal">&times;</span>
+            <h2>Register for Admission</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="regName">Full Name:</label>
+                    <input type="text" id="regName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regContact">Email / Phone:</label>
+                    <input type="text" id="regContact" name="contact" required>
+                </div>
+                <button type="submit" class="btn">Submit Registration</button>
+            </form>
+            <p id="registrationMessage" class="success-message"></p>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Neo<span>Tech</span> Institute</h1>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn" id="applyNowMainBtn">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Shaping Tomorrow's Technology Leaders</h2>
+            <p>NeoTech Institute offers cutting-edge educational programs designed to prepare you for the dynamic world of technology and business. Join us and transform your future.</p>
+            <a href="#programs" class="btn">Explore Programs</a>
+        </div>
+    </section>
+
+    <section class="section" id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Academic Programs</h2>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                        <div class="program-img">
+                            <img src="{{ url_for('static', filename='images/pexels-pixabay-276452.jpg') }}" alt="BCA Program" width="100%" height="100%">
+                        </div>
+
+                    <div class="program-content">
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <p>A three-year undergraduate program that provides strong foundation in computer applications and software development.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="{{ url_for('static', filename='images/MCA.JPG') }}" alt="MCA Program" width="100%" height="100%">
+                    </div>
+                    <div class="program-content">
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <p>A two-year postgraduate program focusing on advanced computing concepts and technologies.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="{{ url_for('static', filename='images/b.tech.jpg') }}" alt="B.Tech Program" width="100%" height="100%">
+                    </div>
+                    <div class="program-content">
+                        <h3>Bachelor of Technology (B.Tech)</h3>
+                        <p>A four-year engineering program offering specializations in various technical disciplines.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="{{ url_for('static', filename='images/bba_picture.jpg') }}" alt="BBA Program" width="100%" height="100%">
+                    </div>
+                    <div class="program-content">
+                        <h3>Bachelor of Business Administration (BBA)</h3>
+                        <p>A three-year undergraduate program preparing students for careers in business management.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="{{ url_for('static', filename='images/MBA.jpg') }}" alt="MBA Program" width="100%" height="100%">
+                    </div>
+                    <div class="program-content">
+                        <h3>Master of Business Administration (MBA)</h3>
+                        <p>A two-year postgraduate program developing advanced business leadership skills.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="{{ url_for('static', filename='images/Bcom.jpg') }}" alt="B.Com Program" width="100%" height="100%">
+
+                    </div>
+                    <div class="program-content">
+                        <h3>Bachelor of Commerce (B.Com)</h3>
+                        <p>A three-year undergraduate program focusing on commerce, accounting, and finance.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="container about-container">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='images/about_us_photo.jpg') }}" alt="NeoTech Campus" width="100%">
+            </div>
+            <div class="about-content">
+                <h2>About NeoTech Institute</h2>
+                <p>Founded in 2010, NeoTech Institute has established itself as a premier educational institution dedicated to excellence in technology and business education. Our vision is to create a learning environment that fosters innovation, critical thinking, and practical skills development.</p>
+                <p>With state-of-the-art facilities, experienced faculty, and industry connections, we provide our students with the knowledge and skills needed to excel in today's competitive job market. Our curriculum is regularly updated to reflect the latest industry trends and technological advancements.</p>
+                <a href="#" class="btn">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section facilities" id="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Campus Facilities</h2>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">L</div>
+                    <h3>Modern Libraries</h3>
+                    <p>Access to extensive digital and physical resources with comfortable study spaces.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">C</div>
+                    <h3>Computer Labs</h3>
+                    <p>Advanced computing facilities with the latest hardware and software technologies.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">R</div>
+                    <h3>Research Centers</h3>
+                    <p>Dedicated spaces for innovation and collaborative research projects.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">S</div>
+                    <h3>Sports Complex</h3>
+                    <p>Indoor and outdoor sports facilities promoting physical wellness.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">H</div>
+                    <h3>Hostels</h3>
+                    <p>Comfortable and secure accommodation for students from various locations.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">T</div>
+                    <h3>Tech Hub</h3>
+                    <p>Innovation center with cutting-edge technology for student projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Shape Your Future?</h2>
+            <p>Take the first step towards a rewarding career by applying to NeoTech Institute today.</p>
+            <a href="#" class="btn btn-white" id="applyNowCtaBtn">Apply Now</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#">BCA</a></li>
+                        <li><a href="#">MCA</a></li>
+                        <li><a href="#">B.Tech</a></li>
+                        <li><a href="#">BBA</a></li>
+                        <li><a href="#">MBA</a></li>
+                        <li><a href="#">B.Com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>123 Education Lane</p>
+                    <p>Tech City, TC 56789</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@neotech.edu</p>
+                    <div class="social-links">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">I</a>
+                        <a href="#">L</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates on programs, events, and more.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NeoTech Institute. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('#menu').classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Check if this is the "Explore Programs" or "Learn More About Us" button
+                // or if it's a regular navigation link (not the apply now button)
+                if (this.getAttribute('href') !== '#' || !this.classList.contains('btn') || this.id === 'exploreProgramsBtn' || this.id === 'learnMoreAboutUsBtn') {
+                    e.preventDefault();
+
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 70, // Adjust for fixed header
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                // Close mobile menu if open
+                document.querySelector('#menu').classList.remove('show');
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chat-button');
+            const chatContainer = document.getElementById('chat-container');
+            const closeChat = document.getElementById('close-chat');
+            const sendButton = document.getElementById('send-button');
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            // Toggle chat visibility
+            chatButton.addEventListener('click', function() {
+                chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+                if (chatContainer.style.display === 'flex') {
+                    userInput.focus();
+                }
+            });
+
+            // Close chat
+            closeChat.addEventListener('click', function() {
+                chatContainer.style.display = 'none';
+            });
+
+            // Send message on button click
+            sendButton.addEventListener('click', sendMessage);
+
+            // Send message on Enter key
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+
+                // Display user message
+                appendMessage(message, 'user');
+                userInput.value = '';
+
+                // Show typing indicator
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'typing-indicator';
+                typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+                chatMessages.appendChild(typingIndicator);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Send message to backend
+                fetch('/get_response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Remove typing indicator
+                    chatMessages.removeChild(typingIndicator);
+
+                    // Display bot response
+                    appendMessage(data.response, 'bot');
+                })
+                .catch(error => {
+                    // Remove typing indicator
+                    chatMessages.removeChild(typingIndicator);
+
+                    // Display error message
+                    appendMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+                    console.error('Error:', error);
+                });
+            }
+
+            function appendMessage(content, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+                messageDiv.textContent = content;
+
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // --- New Code for Registration Modal ---
+            const applyNowMainBtn = document.getElementById('applyNowMainBtn'); // In header nav
+            const applyNowCtaBtn = document.getElementById('applyNowCtaBtn'); // In CTA section
+            const registrationModal = document.getElementById('registrationModal');
+            const closeRegistrationModalBtn = document.getElementById('closeRegistrationModal');
+            const registrationForm = document.getElementById('registrationForm');
+            const registrationMessage = document.getElementById('registrationMessage');
+
+            // Function to open the modal
+            function openRegistrationModal(e) {
+                e.preventDefault(); // Prevent default anchor link behavior
+                registrationModal.style.display = 'flex'; // Use flex to center the modal content
+                registrationMessage.textContent = ''; // Clear previous messages
+                registrationForm.reset(); // Clear form fields
+            }
+
+            // Attach event listeners to all "Apply Now" buttons
+            if (applyNowMainBtn) {
+                applyNowMainBtn.addEventListener('click', openRegistrationModal);
+            }
+            if (applyNowCtaBtn) {
+                applyNowCtaBtn.addEventListener('click', openRegistrationModal);
+            }
+
+            // Function to close the modal
+            if (closeRegistrationModalBtn) {
+                closeRegistrationModalBtn.addEventListener('click', function() {
+                    registrationModal.style.display = 'none';
+                });
+            }
+
+            // Close modal if user clicks outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target == registrationModal) {
+                    registrationModal.style.display = 'none';
+                }
+            });
+
+            // Handle registration form submission
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    const name = document.getElementById('regName').value;
+                    const contact = document.getElementById('regContact').value;
+
+                    try {
+                        const response = await fetch('/register', { // New Flask endpoint
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ name: name, contact: contact })
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                            registrationMessage.textContent = 'Registration Successful! We will contact you soon.';
+                            registrationMessage.style.color = 'var(--citrus)'; // Green color for success
+                            registrationForm.reset(); // Clear the form
+                            // You can optionally close the modal after a delay
+                            setTimeout(() => {
+                                registrationModal.style.display = 'none';
+                            }, 3000); // Close after 3 seconds
+                        } else {
+                            registrationMessage.textContent = data.message || 'Registration failed. Please try again.';
+                            registrationMessage.style.color = 'var(--apple)'; // Red color for error
+                        }
+                    } catch (error) {
+                        console.error('Error during registration:', error);
+                        registrationMessage.textContent = 'An error occurred. Please try again later.';
+                        registrationMessage.style.color = 'var(--apple)';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
